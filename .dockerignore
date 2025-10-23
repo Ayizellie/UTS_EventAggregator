@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (exclude database, tapi di-recreate di container)
+data/*.db
+data/*.db-journal
+
+# Git
+.git/
+.gitignore
+
+# Docs
+*.md
+report.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
