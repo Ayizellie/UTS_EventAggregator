@@ -78,5 +78,5 @@ Kelas	: Sistem Parallel dan Terdistribusi \- A
 
 6. **Link Youtube dan Github**  
 - Youtube : https://youtu.be/4gXW3jF0bQU?si=DSftyvQVfUNMN6QY  
-- Github : 
+- Github : https://github.com/Ayizellie/UTS_EventAggregator
 

@@ -117,6 +117,7 @@ Consumer / Stats
 
 ## Video Demo (Link Youtube)
 **https://youtu.be/4gXW3jF0bQU?si=DSftyvQVfUNMN6QY**
+**https://github.com/Ayizellie/UTS_EventAggregator**
 Menunjukkan:
 - Build dan run Docker container
 - Kirim event duplikat
