@@ -4,7 +4,6 @@ def test_invalid_event_payload(client):
     """Pastikan sistem menolak event tanpa field wajib"""
     invalid_event = {
         "topic": "invalid.topic",
-        # event_id hilang → harus gagal
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "source": "test_suite",
         "payload": {"value": 111}
@@ -32,7 +31,7 @@ def test_batch_publish(client):
     data = res.json()
     assert data["added_to_queue"] == 5
 
-    # cek total event pada topic
+    
     get_res = client.get("/events?topic=batch.topic")
     assert get_res.status_code == 200
     events_data = get_res.json()
@@ -79,7 +78,7 @@ def test_event_ordering_by_timestamp(client):
     res = client.get(f"/events?topic={topic}")
     data = res.json()
 
-    # pastikan urutan berdasarkan timestamp
+    
     events = data["events"]
     timestamps = [e["timestamp"] for e in events]
     assert timestamps == sorted(timestamps)

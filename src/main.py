@@ -6,7 +6,7 @@ from src.event_queue import EventQueue
 from datetime import datetime
 from fastapi.responses import JSONResponse
 
-# 🔧 setup logging biar muncul di terminal
+# setup logging biar muncul di terminal
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -17,10 +17,10 @@ app = FastAPI()
 dedup = DedupStore()
 queue = EventQueue()
 
-# 🕒 waktu mulai server
+# waktu mulai server
 start_time = datetime.utcnow()
 
-# 📊 statistik global
+# statistik global
 stats_data = {
     "received": 0,
     "unique_processed": 0,
@@ -29,7 +29,7 @@ stats_data = {
 
 
 # ---------------------------
-# 1️⃣ Publish endpoint
+# Publish endpoint
 # ---------------------------
 @app.post("/publish")
 def publish(batch: dict):  # ubah sementara jadi dict biar manual validation bisa jalan
@@ -70,7 +70,7 @@ def publish(batch: dict):  # ubah sementara jadi dict biar manual validation bis
     return {"status": "ok", "received": len(batch_model.events), "added_to_queue": added_count}
 
 # ---------------------------
-# 2️⃣ Ambil semua event
+# Ambil semua event
 # ---------------------------
 @app.get("/events")
 def get_events(topic: str = None):
@@ -81,7 +81,7 @@ def get_events(topic: str = None):
 
 
 # ---------------------------
-# 3️⃣ Statistik lengkap
+# Statistik lengkap
 # ---------------------------
 @app.get("/stats")
 def stats():

@@ -14,17 +14,17 @@ def test_add_and_detect_duplicate(temp_db):
     topic = "demo.topic"
     event_id = "evt_dupe_001"
 
-    # pertama kali belum ada
+    
     assert not temp_db.is_duplicate(topic, event_id)
 
-    # tambahkan event
+    
     added = temp_db.add_event(topic, event_id)
     assert added is True
     assert temp_db.is_duplicate(topic, event_id)
 
-    # tambahkan lagi (duplikat)
+
     added_again = temp_db.add_event(topic, event_id)
-    assert added_again is False  # harusnya ditolak
+    assert added_again is False  
 
 
 def test_multiple_topics_and_events(temp_db):

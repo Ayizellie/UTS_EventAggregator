@@ -57,7 +57,7 @@ async def send_batch(session, batch_ids):
 async def clear_database():
     print("🧹 Clearing database before test...")
     async with aiohttp.ClientSession() as session:
-        await session.post(f"{BASE_URL}/clear")  # pastikan endpoint clear ada
+        await session.post(f"{BASE_URL}/clear")  
     print("✅ Database cleared\n")
 
 # --------------------------

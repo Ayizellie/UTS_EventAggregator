@@ -5,7 +5,7 @@ import threading
 class EventQueue:
     def __init__(self):
         self.queue = deque()
-        self.lock = threading.Lock()  # 🔒 mencegah race condition
+        self.lock = threading.Lock()  
 
     def add_event(self, event):
         """Menambahkan event ke dalam queue."""

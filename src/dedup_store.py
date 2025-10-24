@@ -37,7 +37,7 @@ class DedupStore:
                 ).fetchall()
             else:
                 rows = conn.execute("SELECT topic, event_id FROM dedup").fetchall()
-            return rows  # langsung kembalikan list of tuple
+            return rows  
 
     def get_topics(self):
         with self.lock, sqlite3.connect(self.db_path) as conn:

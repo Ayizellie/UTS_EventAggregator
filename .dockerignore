@@ -21,7 +21,7 @@ htmlcov/
 *.swp
 *.swo
 
-# Data (exclude database, tapi di-recreate di container)
+# Data 
 data/*.db
 data/*.db-journal
 
